@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ========================================================= RESET ========================================================= */
+
+{ margin: 0; padding: 0; box-sizing: border-box; } 
+
+html { scroll-behavior: smooth; }
+
+body { width: 100%; min-height: 100vh; font-family: 'Poppins', sans-serif; background: #eef7ff; color: #4c6680; overflow-x: hidden; }
+
+button, input { font-family: inherit; }
+
+/* ========================================================= FUNDO ========================================================= */
+
+body::before { content: ""; position: fixed; inset: 0; z-index: -2; background: radial-gradient(circle at 50% 0%, rgba(255,255,255,.95), transparent 42%), linear-gradient(180deg, #dcefff 0%, #eef7ff 48%, #ffffff 100%); }
+
+body::after { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .35; background-image: radial-gradient(circle, rgba(255,255,255,.9) 0 1px, transparent 1.5px); background-size: 42px 42px; }
+
+/* ========================================================= TELA DE ABERTURA ========================================================= */
+
+#tela-envelope { width: 100%; min-height: 100vh; min-height: 100dvh;
+
+display: flex; align-items: center; justify-content: center; padding: 25px; background: radial-gradient(circle at center, rgba(255,255,255,.95), transparent 55%), linear-gradient(180deg, #d6ecff, #edf7ff); cursor: pointer; transition: opacity .8s ease, visibility .8s ease; 
+
+}
+
+#tela-envelope.oculto { opacity: 0; visibility: hidden; pointer-events: none; }
+
+.envelope { width: min(90vw, 430px); text-align: center; animation: aparecer 1.2s ease; }
+
+.envelope::before { content: "Y"; display: flex; align-items: center; justify-content: center;
+
+width: 92px; height: 92px; margin: 0 auto 25px; border: 1px solid rgba(116, 157, 194, .55); border-radius: 50%; background: rgba(255,255,255,.72); color: #739bc1; font-family: 'Cinzel', serif; font-size: 42px; font-weight: 500; box-shadow: 0 10px 35px rgba(95,135,170,.16), inset 0 0 20px rgba(255,255,255,.8); 
+
+}
+
+.envelope h1 { color: #658caf; font-family: 'Cinzel', serif; font-size: clamp(27px, 7vw, 38px); font-weight: 500; letter-spacing: 3px; }
+
+.envelope p { margin-top: 10px;
+
+color: #7894ae; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; 
+
+}
+
+/* ========================================================= SITE PRINCIPAL ========================================================= */
+
+#tela-convite { display: none;
+
+width: 100%; min-height: 100vh; opacity: 0; animation: entradaSite 1s ease forwards; 
+
+}
+
+#tela-convite.visivel { display: block; }
+
+/* ========================================================= CONTEÚDO PRINCIPAL ========================================================= */
+
+.site { width: 100%; max-width: 620px; margin: 0 auto; padding: 30px 20px 55px; }
+
+/* ========================================================= CABEÇALHO ========================================================= */
+
+.cabecalho { min-height: 92vh; min-height: 92dvh;
+
+display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; 
+
+}
+
+.monograma { width: 78px; height: 78px;
+
+display: flex; align-items: center; justify-content: center; margin-bottom: 22px; border: 1px solid rgba(105,145,180,.55); border-radius: 50%; background: rgba(255,255,255,.65); color: #7098bd; font-family: 'Cinzel', serif; font-size: 34px; box-shadow: 0 12px 35px rgba(87,128,166,.14); 
+
+}
+
+.cabecalho .pequeno { color: #7695b0; font-size: 11px; font-weight: 500; letter-spacing: 4px; text-transform: uppercase; }
+
+.cabecalho h1 { margin-top: 12px;
+
+color: #5e82a5; font-family: 'Cinzel', serif; font-size: clamp(34px, 10vw, 52px); font-weight: 500; letter-spacing: 3px; 
+
+}
+
+.cabecalho h2 { margin-top: 3px;
+
+color: #7595b3; font-family: 'Cinzel', serif; font-size: clamp(16px, 5vw, 22px); font-weight: 400; letter-spacing: 5px; text-transform: uppercase; 
+
+}
+
+.cabecalho .frase { max-width: 410px; margin: 27px auto 0;
+
+color: #718aa2; font-size: 13px; line-height: 1.9; font-weight: 300; 
+
+}
+
+.botao-abrir { margin-top: 35px;
+
+padding: 13px 29px; border: 1px solid rgba(101,140,177,.55); border-radius: 30px; background: rgba(255,255,255,.58); color: #6388ad; font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; box-shadow: 0 8px 25px rgba(92,130,164,.12); transition: .3s ease; 
+
+}
+
+.botao-abrir:hover { background: rgba(255,255,255,.85); transform: translateY(-2px); }
+
+/* ========================================================= SEÇÕES ========================================================= */
+
+.secao { width: 100%; margin-top: 30px; padding: 42px 24px;
+
+text-align: center; border-top: 1px solid rgba(112,151,186,.18); 
+
+}
+
+.secao-titulo { color: #6488ac;
+
+font-family: 'Cinzel', serif; font-size: 21px; font-weight: 500; letter-spacing: 2px; 
+
+}
+
+.secao-subtitulo { margin-top: 9px;
+
+color: #8298ac; font-size: 11px; letter-spacing: 1px; 
+
+}
+
+/* ========================================================= DATA ========================================================= */
+
+.data-evento { margin-top: 30px; }
+
+.data-evento .data { color: #6085aa;
+
+font-family: 'Cinzel', serif; font-size: clamp(29px, 8vw, 40px); font-weight: 500; letter-spacing: 3px; 
+
+}
+
+.data-evento .horario { margin-top: 8px;
+
+color: #7c98b1; font-size: 14px; letter-spacing: 3px; 
+
+}
+
+/* ========================================================= CONTAGEM REGRESSIVA ========================================================= */
+
+.contagem { margin-top: 45px; }
+
+.contagem h3 { color: #6b8dab;
+
+font-family: 'Cinzel', serif; font-size: 17px; font-weight: 500; letter-spacing: 2px; 
+
+}
+
+.contador { width: 100%; max-width: 470px; margin: 24px auto 0;
+
+display: grid; grid-template-columns: repeat(4, 1fr); gap: 9px; 
+
+}
+
+.tempo { padding: 15px 5px;
+
+border: 1px solid rgba(108,148,185,.18); background: rgba(255,255,255,.48); 
+
+}
+
+.tempo span { display: block;
+
+color: #6489ae; font-family: 'Cinzel', serif; font-size: clamp(22px, 7vw, 30px); font-weight: 500; 
+
+}
+
+.tempo small { display: block; margin-top: 4px;
+
+color: #91a5b7; font-size: 8px; letter-spacing: 1.5px; text-transform: uppercase; 
+
+}
+
+/* ========================================================= CONFIRMAÇÃO ========================================================= */
+
+.confirmacao { margin-top: 35px; }
+
+.confirmacao p { max-width: 390px; margin: 13px auto 22px;
+
+color: #7b91a6; font-size: 12px; line-height: 1.8; 
+
+}
+
+.busca-area { width: 100%; max-width: 420px; margin: 0 auto;
+
+display: flex; flex-direction: column; gap: 10px; 
+
+}
+
+#busca { width: 100%;
+
+padding: 14px 17px; border: 1px solid rgba(106,145,181,.35); border-radius: 2px; outline: none; background: rgba(255,255,255,.72); color: #617e99; font-size: 12px; text-align: center; transition: .25s ease; 
+
+}
+
+#busca::placeholder { color: #9aacbb; }
+
+#busca:focus { border-color: rgba(87,132,173,.65);
+
+box-shadow: 0 0 0 3px rgba(124,169,208,.10); 
+
+}
+
+#buscarConvite { width: 100%;
+
+padding: 13px 18px; border: 1px solid rgba(100,139,176,.45); border-radius: 2px; background: #789fc3; color: white; font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: .25s ease; 
+
+}
+
+#buscarConvite:hover { background: #668fb6; }
+
+/* ========================================================= RESULTADO DA BUSCA ========================================================= */
+
+#resultado { width: 100%; max-width: 420px; margin: 25px auto 0;
+
+text-align: left; 
+
+}
+
+.convite-encontrado { padding: 22px;
+
+border-top: 1px solid rgba(102,142,178,.22); border-bottom: 1px solid rgba(102,142,178,.22); background: rgba(255,255,255,.42); 
+
+}
+
+.convite-encontrado h3 { margin-bottom: 15px;
+
+color: #6388ac; font-family: 'Cinzel', serif; font-size: 17px; font-weight: 500; text-align: center; 
+
+}
+
+.pessoa-check { min-height: 43px;
+
+display: flex; align-items: center; gap: 12px; padding: 8px 4px; color: #71889f; font-size: 12px; cursor: pointer; border-bottom: 1px solid rgba(105,143,178,.10); 
+
+}
+
+.pessoa-check:last-of-type { border-bottom: none; }
+
+.pessoa-check input { position: absolute; opacity: 0; pointer-events: none; }
+
+.quadradinho { width: 19px; height: 19px; flex: 0 0 19px;
+
+display: inline-flex; align-items: center; justify-content: center; border: 1px solid #8aaac5; background: rgba(255,255,255,.7); transition: .2s ease; 
+
+}
+
+.pessoa-check input:checked + .quadradinho { background: #789fc3; border-color: #789fc3; }
+
+.pessoa-check input:checked + .quadradinho::after { content: "✓";
+
+color: white; font-size: 12px; font-weight: 600; 
+
+}
+
+.botao-confirmar { width: 100%;
+
+margin-top: 20px; padding: 13px 18px; border: 1px solid rgba(100,139,176,.45); border-radius: 2px; background: transparent; color: #668bab; font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: .25s ease; 
+
+}
+
+.botao-confirmar:hover { background: #789fc3; color: white; }
+
+/* ========================================================= MENSAGENS ========================================================= */
+
+.mensagem { margin-top: 15px;
+
+color: #7690a7; font-size: 11px; line-height: 1.7; text-align: center; 
+
+}
+
+.mensagem.sucesso { color: #668aa9; }
+
+.mensagem.erro { color: #a16f7b; }
+
+/* ========================================================= FINAL ========================================================= */
+
+.final { padding: 70px 20px 25px;
+
+text-align: center; 
+
+}
+
+.final .monograma-final { width: 58px; height: 58px;
+
+display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; border: 1px solid rgba(105,145,180,.45); border-radius: 50%; color: #7298ba; font-family: 'Cinzel', serif; font-size: 24px; 
+
+}
+
+.final h3 { color: #6688a8;
+
+font-family: 'Cinzel', serif; font-size: 20px; font-weight: 500; letter-spacing: 2px; 
+
+}
+
+.final p { margin-top: 9px;
+
+color: #8297aa; font-size: 11px; line-height: 1.8; 
+
+}
+
+/* ========================================================= ANIMAÇÕES ========================================================= */
+
+@keyframes aparecer { from { opacity: 0; transform: translateY(15px); }
+
+to { opacity: 1; transform: translateY(0); } 
+
+}
+
+@keyframes entradaSite { from { opacity: 0; }
+
+to { opacity: 1; } 
+
+}
+
+/* ========================================================= CELULARES ========================================================= */
+
+@media (max-width: 480px) {
+
+.site { padding-left: 16px; padding-right: 16px; } .cabecalho { min-height: 88vh; min-height: 88dvh; } .secao { padding-left: 14px; padding-right: 14px; } .contador { gap: 6px; } .tempo { padding: 13px 3px; } .tempo span { font-size: 23px; } .tempo small { font-size: 7px; } 
+
+}
+
+/* ========================================================= TELAS MUITO PEQUENAS ========================================================= */
+
+@media (max-width: 350px) {
+
+.cabecalho h1 { font-size: 31px; } .cabecalho h2 { font-size: 15px; } .contador { gap: 4px; } .tempo span { font-size: 20px; } .tempo small { font-size: 6px; } 
+
+}
+
